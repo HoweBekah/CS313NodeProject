@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/HoweBekah/CS313NodeProject/issues"
   },
-  "homepage": "https://github.com/HoweBekah/CS313NodeProject#readme"
+  "homepage": "https://github.com/HoweBekah/CS313NodeProject#readme",
+  "dependencies": {
+    "cool-ascii-faces": "^1.3.4"
+  }
 }
