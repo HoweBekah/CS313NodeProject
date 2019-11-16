@@ -25,7 +25,7 @@ express()
         } else {
           result = 1.0;
         }
-
+        result.toFixed(2);
         break;
       case "metered":
         console.log("metered");
@@ -38,14 +38,15 @@ express()
         } else {
           result = 1.0;
         }
+        result.toFixed(2);
         break;
       case "envelope":
         console.log("envelope");
         result = 1.0;
-        for (i = 1; i <= weight; i++) {
+        for (i = 1; i < weight; i++) {
           result += 0.15;
         }
-
+        result.toFixed(2);
         break;
       case "package":
         console.log("package");
@@ -58,7 +59,7 @@ express()
         } else {
           result = 5.71;
         }
-        //result = op1 * op2;
+        result.toFixed(2);
         break;
       default:
         console.log("Broken!");
