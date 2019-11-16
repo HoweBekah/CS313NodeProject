@@ -7,7 +7,7 @@ express()
   .set("views", path.join(__dirname, "views"))
   .set("view engine", "ejs")
   .get("/", (req, res) => res.render("pages/index"))
-  .get("/postal", function(req, res) {
+  .get("/getRate", function calculateRate(req, res) {
     console.log("Function called!");
     let weight = Number(req.query.weight);
     var mailType = req.query.mailType;
@@ -30,13 +30,13 @@ express()
       case "metered":
         console.log("metered");
         if (weight == 1) {
-          result = 0.55;
+          result = 0.5;
         } else if (weight == 2) {
-          result = 0.7;
+          result = 0.65;
         } else if (weight == 3) {
-          result = 0.85;
+          result = 0.8;
         } else {
-          result = 1.0;
+          result = 0.95;
         }
         result.toFixed(2);
         break;
@@ -67,7 +67,7 @@ express()
     }
     console.log(result);
     res.render("pages/results", {
-      result: result
+      result: result.toFixed(2)
     });
   })
   .listen(PORT, () => console.log(`Listening on ${PORT}`));
