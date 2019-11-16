@@ -16,27 +16,57 @@ express()
     switch (mailType) {
       case "stamped":
         console.log("stamped!");
-        //result = op1 + op2;
+        if (weight == 1) {
+          result = 0.55;
+        } else if (weight == 2) {
+          result = 0.7;
+        } else if (weight == 3) {
+          result = 0.85;
+        } else {
+          result = 1.0;
+        }
+
         break;
       case "metered":
         console.log("metered");
-        // result = op1 - op2;
+        if (weight == 1) {
+          result = 0.55;
+        } else if (weight == 2) {
+          result = 0.7;
+        } else if (weight == 3) {
+          result = 0.85;
+        } else {
+          result = 1.0;
+        }
         break;
       case "envelope":
         console.log("envelope");
-        //result = op1 / op2;
+        result = 1.0;
+        for (i = weight; i < 14; i++) {
+          result += 0.15;
+        }
+
         break;
       case "package":
         console.log("package");
+        if (weight < 5) {
+          result = 3.66;
+        } else if (weight < 9) {
+          result = 4.39;
+        } else if (weight < 13) {
+          result = 5.19;
+        } else {
+          result = 5.71;
+        }
         //result = op1 * op2;
         break;
       default:
         console.log("Broken!");
         break;
     }
-    // console.log(result);
-    // res.render("pages/results", {
-    //   result: result
-    // });
+    console.log(result);
+    res.render("pages/results", {
+      result: result
+    });
   })
   .listen(PORT, () => console.log(`Listening on ${PORT}`));

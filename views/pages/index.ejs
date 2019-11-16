@@ -8,14 +8,8 @@
     <h1>Postal Rate Calculator</h1>
     <hr />
     <form class="" action="postal" method="get">
-      <label for="weight">Weight (lbs): </label>
-      <input
-        type="number"
-        name="weight"
-        value=""
-        pattern="^\d*(\.\d{0,2})?$"
-        required
-      /><br />
+      <label for="weight">Weight (oz): </label>
+      <input type="number" name="weight" value="" step="0.1" required /><br />
 
       <label for="mailType">Type of Mail: </label>
       <select name="mailType" required>
