@@ -2,19 +2,31 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
-    <title>MATH!!!</title>
+    <title>Postal Rate Calculator</title>
   </head>
   <body>
-    <form class="" action="math" method="get">
-      Operand 1: <input type="number" name="op1" value="" /><br />
-      Operand 2: <input type="number" name="op2" value="" /><br />
-      Operator:
-      <hr />
-      + <input type="radio" name="operator" value="+" /> -
-      <input type="radio" name="operator" value="-" /> /
-      <input type="radio" name="operator" value="/" /> *
-      <input type="radio" name="operator" value="*" />
-      <input type="submit" name="submit" value="Send It!" />
+    <h1>Postal Rate Calculator</h1>
+    <hr />
+    <form class="" action="postal" method="get">
+      <label for="weight">Weight: </label>
+      <input
+        type="number"
+        name="weight"
+        value=""
+        pattern="^\d*(\.\d{0,1})?$"
+        required
+      /><br />
+
+      <label for="mailType">Type of Mail: </label>
+      <select name="mailType" required>
+        <option value="choice" selected disabled>Choose Type</option>
+        <option value="stamped">Letters (Stamped)</option>
+        <option value="metered">Letters (Metered)</option>
+        <option value="envelope">Large Envelopes (Flats)</option>
+        <option value="package">First-Class Package Service—Retail</option>
+
+        <input type="submit" name="submit" value="Calculate Price" />
+      </select>
     </form>
   </body>
 </html>
