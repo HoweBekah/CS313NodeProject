@@ -42,7 +42,7 @@ express()
       case "envelope":
         console.log("envelope");
         result = 1.0;
-        for (i = weight; i < 14; i++) {
+        for (i = 0; i <= weight; i++) {
           result += 0.15;
         }
 
