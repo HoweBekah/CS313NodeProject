@@ -2,25 +2,41 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/stylesheets/new.css"
+      media="screen"
+    />
     <title>Postal Rate Calculator</title>
   </head>
   <body>
     <h1>Postal Rate Calculator</h1>
-    <hr />
-    <form class="" action="getRate" method="get">
-      <label for="weight">Weight (oz): </label>
-      <input type="number" name="weight" value="" step="0.1" required /><br />
 
-      <label for="mailType">Type of Mail: </label>
-      <select name="mailType" required>
-        <option value="choice" selected disabled>Choose Type</option>
-        <option value="stamped">Letters (Stamped)</option>
-        <option value="metered">Letters (Metered)</option>
-        <option value="envelope">Large Envelopes (Flats)</option>
-        <option value="package">First-Class Package Service—Retail</option>
+    <form id="postalForm" class="" action="getRate" method="get">
+      <div id="weightDiv">
+        <label for="weight">Weight (oz): </label>
+        <input type="number" name="weight" value="" step="0.1" required /><br />
+      </div>
+      <div id="mailDiv">
+        <label for="mailType">Type of Mail: </label>
+        <select name="mailType" required>
+          <option value="choice" selected disabled>Choose Type</option>
+          <option value="stamped">Letters (Stamped)</option>
+          <option value="metered">Letters (Metered)</option>
+          <option value="envelope">Large Envelopes (Flats)</option>
+          <option value="package"
+            >First-Class Package Service—Retail</option
+          ></select
+        >
+      </div>
 
-        <input type="submit" name="submit" value="Calculate Price" />
-      </select>
+      <input
+        id="submitBtn"
+        type="submit"
+        name="submit"
+        value="Calculate Price"
+      />
     </form>
   </body>
 </html>

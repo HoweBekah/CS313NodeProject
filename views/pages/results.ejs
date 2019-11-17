@@ -1,10 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/stylesheets/new.css"
+      media="screen"
+    />
     <meta charset="utf-8" />
     <title>Postage Cost</title>
   </head>
   <body>
-    Postage Cost: $<%= result %>
+    <div id="resultDiv">
+      <h1 id="resultH1">Final Cost</h1>
+      <div id="costBack">
+        <h2 id="resultCost">$<%= result %></h2>
+      </div>
+      <form id="ResultForm" action="/" method="get">
+        <div id="subDiv">
+          <input
+            id="backBtn"
+            type="submit"
+            name="submit"
+            value="Back to Calculator"
+          />
+        </div>
+      </form>
+    </div>
   </body>
 </html>
